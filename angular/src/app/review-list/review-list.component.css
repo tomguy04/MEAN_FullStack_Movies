@@ -1,0 +1,35 @@
+.wrapper{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+.title{
+    padding-left: 10px;
+    margin:0px;
+}
+
+.button {background-color: red; color: white;} 
+
+.jumbotron{
+    background-color: blue;
+    border: 5px solid;
+    color: white;
+    
+}
+
+.table{
+    background-color: orange;
+    border: 5px solid;
+    color: black;
+}
+
+
+h1{
+    display: inline-block; 
+    vertical-align: top;
+}
+
+h3{
+    display: inline-block; 
+    vertical-align: top;
+}

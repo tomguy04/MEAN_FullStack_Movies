@@ -1,0 +1,10 @@
+.wrapper{
+    border: 2px solid black;
+    padding: 5px;
+    margin: 0px;
+}
+
+.title{
+    padding-left: 10px;
+    margin:0px;
+}

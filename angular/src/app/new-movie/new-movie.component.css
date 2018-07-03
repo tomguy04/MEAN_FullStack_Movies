@@ -1,0 +1,52 @@
+.wrapper{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}    
+
+.submit {background-color: blue; color: white;} 
+.cancel {background-color: orange; color: white;} 
+
+.form-control{
+    margin: 0px;
+    padding: 0px;
+}
+
+.jumbotron{
+    
+    border: 5px solid black;
+    color: white;
+    background-color: orange;
+}
+
+.form-group row{
+    padding: 0px;
+    margin :0px;
+   
+}
+
+.col-sm-2 col-form-label{
+    padding: 0px;
+    margin :0px;
+}
+ .col-sm-10{
+    padding: 0px;
+    margin :0px;
+}
+
+.form-control{
+    padding: 0px;
+    margin :0px;
+    
+}  
+
+.page-header{
+    background-color: blue;
+    color: black;
+}
+
+button{
+    margin: 5px;
+    padding: 5px;
+}
+

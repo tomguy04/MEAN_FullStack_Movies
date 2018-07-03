@@ -1,0 +1,101 @@
+<!-- <div *ngIf='registrationErrors.length'>
+  <ul class="alert alert-danger">
+    <li *ngFor='let error of registrationErrors'>{{error}}</li>
+  </ul>
+</div> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="new-movie.component.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="jumbotron">
+        <h3>Submit Your Movie and Your Review</h3>
+      <form name = 'user' (submit)="onSubmit(form)" #form='ngForm'>
+        
+          <div class="form-group row">
+              <label for="title" class="col-sm-2 col-form-label">Title : </label>
+              <div class="col-sm-10">
+                  <input 
+                  class="form-control"
+                  type="text"
+                  name="title"
+                  required
+                  minlength="3"
+                  [(ngModel)]="movie.title"
+                  #title='ngModel'
+                  />
+              </div>
+          </div>
+          <div class = 'side'*ngIf='title.touched && title.invalid'>Movie must have a title, at least 3 characters</div><br>
+          
+          <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Your Name : </label>
+              <div class="col-sm-10">
+              <input 
+              type="text"
+              name="name"
+              required
+              minlength = "3"
+              [(ngModel)]="movie.name"
+              #name='ngModel'
+              />
+            </div>
+          </div>
+          <div class = 'side'*ngIf='name.touched && name.invalid'>Your must provide your name, at least 3 characters</div><br>
+    
+          <div class="form-group row">
+              <label for="stars" class="col-sm-2 col-form-label">Stars :</label>
+              <div class="col-sm-10">
+              <select type = 'number' name="stars" required [(ngModel)]="movie.stars" #stars='ngModel' >
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>   
+              <option value=4>4</option> 
+              <option value=5>5</option> 
+            </select>
+          </div>
+        </div>
+        <div class = 'side'*ngIf='stars.touched && stars.invalid'>Stars are required</div><br>
+
+        <div class="form-group row">
+            <label for="review" class="col-sm-2 col-form-label"> Your Review :</label>
+            <div class="col-sm-10">
+            <input 
+            type="string"
+            name="review"
+            minlength = "3"
+            required
+            [(ngModel)]="movie.review"
+            #review='ngModel'
+            />
+           </div>
+         </div>
+
+          <div class = 'side'*ngIf='review.touched && review.invalid'>Review is Required, at least 3 characters</div><br>
+    
+         
+        <!-- <button class="submit" type="submit"  [disabled]="form.invalid">Submit</button> -->
+        <button type="button" class="btn btn-primary" type ='submit' disabled  [disabled]="form.invalid" >Submit</button>
+        <button type="button" class="btn btn-info" (click)='onCancel()'>Cancel</button>
+        
+      </form> 
+    
+      </div>
+      </div>
+      <router-outlet></router-outlet>
+  </body>
+</html>    
+
+
